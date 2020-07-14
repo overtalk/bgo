@@ -1,0 +1,7 @@
+<xml>
+    <name>xxx http server</name>
+    <host>0.0.0.0</host>
+    <port>9999</port>
+    <certFile></certFile>
+    <keyFile></keyFile>
+</xml>

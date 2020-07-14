@@ -1,0 +1,8 @@
+<xml>
+    <address>
+        <item>127.0.0.1:6379</item>
+    </address>
+
+    <password></password>
+    <poolSize>10</poolSize>
+</xml>

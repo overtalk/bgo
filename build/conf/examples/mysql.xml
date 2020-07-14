@@ -1,0 +1,7 @@
+<xml>
+    <poolSize>10</poolSize>
+    <username>root</username>
+    <password>123456789</password>
+    <address>127.0.0.1:3306</address>
+    <dbname>xxx</dbname>
+</xml>

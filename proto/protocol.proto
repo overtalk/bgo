@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package msg;
+
+import "common.proto";
+
+option go_package = "protocol;gamepb";
+
+service RoomRpc {
+    rpc Ping(PingReq) returns (PingResp);
+    rpc Create(CreateRoomReq) returns (CreateRoomResp);
+    rpc Shutdown(ShutdownRoomReq) returns (ShutdownRoomResp);
+    rpc Save(SaveRoomReq) returns (SaveRoomResp);
+}
+
+// ping about
+message PingReq
+{
+}
+
+message PingResp
+{
+    Result result = 1;
+}
+
+// create room about
+message CreateRoomReq
+{
+    Room room = 1;
+}
+
+message CreateRoomResp
+{
+    Result result = 1;
+    Room room = 2;
+}
+
+// shutdown room about
+message ShutdownRoomReq
+{
+    string user_id = 1;
+    string world_file_name = 2;
+    string room_code = 3;
+}
+
+message ShutdownRoomResp
+{
+    Result result = 1;
+}
+
+// save room about
+message SaveRoomReq
+{
+    string user_id = 1;
+    string world_file_name = 2;
+    string room_code = 3;
+}
+
+message SaveRoomResp
+{
+    Result result = 1;
+}

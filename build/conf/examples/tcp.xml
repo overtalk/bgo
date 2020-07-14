@@ -1,0 +1,8 @@
+<xml>
+    <name>xxx tcp server</name>
+    <network>tcp</network>
+    <host>0.0.0.0</host>
+    <port>9999</port>
+    <maxConn>0</maxConn>
+    <readSynced>true</readSynced>
+</xml>

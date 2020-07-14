@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package msg;
+
+option go_package = "protocol;gamepb";
+
+message Protocol
+{
+    enum Id {
+        // request
+        PingReq = 0;
+        CreateRoomReq = 2;
+        ShutdownRoomReq = 3;
+        SaveRoomReq = 5;
+
+        // response
+        PingResp = 100;
+        CreateRoomResp = 102;
+        ShutdownRoomResp = 103;
+        SaveRoomResp = 105;
+    }
+}

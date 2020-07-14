@@ -1,0 +1,6 @@
+<xml>
+    <modules module_conf_base_dir="./build/conf">
+        <module name="modules.mysql" conf="modules.mysql.xml" />
+        <module name="modules.redis" conf="modules.redis.xml" />
+    </modules>
+</xml>

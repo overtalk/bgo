@@ -1,0 +1,8 @@
+<xml>
+    <ak>xxx</ak>
+    <sk>xxx</sk>
+    <endpoint>oss-cn-shanghai.aliyuncs.com</endpoint>
+    <internetEndpoint>oss-cn-shanghai-internal.aliyuncs.com</internetEndpoint>
+    <bucket>xxx</bucket>
+    <dir>/</dir>
+</xml>
