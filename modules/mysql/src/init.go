@@ -1,11 +1,12 @@
 package cmysql
 
 import (
+	"go.uber.org/zap"
+
 	"github.com/overtalk/bgo/core"
 	"github.com/overtalk/bgo/modules/mysql"
 	"github.com/overtalk/bgo/pkg/log"
 	"github.com/overtalk/bgo/pkg/mysql"
-	"go.uber.org/zap"
 )
 
 func init() {
@@ -25,6 +26,7 @@ func (this *CMysqlModule) LoadConfig(path string) error {
 		logpkg.Error("load config error", zap.Any("path", path), zap.Any("module", this.GetName()))
 		return err
 	}
+
 	this.mysqlConn = mysqlConn
 	return nil
 }
