@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	consistent "github.com/overtalk/bgo/pkg/consistent"
+	"github.com/overtalk/bgo/3rdparty/consistent"
 )
 
 func TestConsistent(t *testing.T) {

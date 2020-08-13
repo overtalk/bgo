@@ -103,26 +103,6 @@ func BuildLogger() {
 	logger = zap.New(zapcore.NewTee(cores...), zap.AddCaller())
 }
 
-//
-//func Log(lvl zapcore.Level, msg string, fields ...zapcore.Field) {
-//	switch lvl {
-//	case zapcore.DebugLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).Debug(msg)
-//	case zapcore.InfoLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).Info(msg)
-//	case zapcore.WarnLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).Warn(msg)
-//	case zapcore.ErrorLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).Error(msg)
-//	case zapcore.DPanicLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).DPanic(msg)
-//	case zapcore.PanicLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).Panic(msg)
-//	case zapcore.FatalLevel:
-//		GetLogger().WithOptions(zap.AddCallerSkip(1)).With(fields...).Fatal(msg)
-//	}
-//}
-
 func getLogger() *zap.Logger {
 	once.Do(func() {
 		if logger == nil {
