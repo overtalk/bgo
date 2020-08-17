@@ -3,7 +3,7 @@ package pool_test
 import (
 	"testing"
 
-	zeropool "github.com/overtalk/bgo/pkg/pool"
+	zeropool "github.com/overtalk/bgo/pkg/service/pool"
 )
 
 func TestByteBufPool(t *testing.T) {

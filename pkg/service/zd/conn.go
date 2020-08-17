@@ -4,9 +4,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/overtalk/bgo/pkg/pool"
+	"github.com/overtalk/bgo/pkg/service/pool"
 )
 
+// BaseConn base connection
 type BaseConn struct {
 	netConn   net.Conn
 	bufReader *pool.BufReader
@@ -74,7 +75,7 @@ func (c *BaseConn) Read(b []byte) (int, error) {
 	return c.bufReader.Read(b)
 }
 
-// Write write some bytes to the wrapped netconn
+// Write write some bytes to the wrapped net conn
 func (c *BaseConn) Write(b []byte) (int, error) {
 	if c.wrTimeout > 0 {
 		c.netConn.SetWriteDeadline(time.Now().Add(c.wrTimeout))
@@ -82,7 +83,5 @@ func (c *BaseConn) Write(b []byte) (int, error) {
 	return c.netConn.Write(b)
 }
 
-// Close close the wrapped netconn
-func (c *BaseConn) Close() (err error) {
-	return c.netConn.Close()
-}
+// Close close the wrapped net conn
+func (c *BaseConn) Close() (err error) { return c.netConn.Close() }

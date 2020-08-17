@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"testing"
 
-	zeropool "github.com/overtalk/bgo/pkg/pool"
+	zeropool "github.com/overtalk/bgo/pkg/service/pool"
 )
 
 func TestBufReader(t *testing.T) {

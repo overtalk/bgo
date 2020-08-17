@@ -7,7 +7,7 @@ import (
 
 	"go.uber.org/zap"
 
-	gozd "github.com/overtalk/bgo/3rdparty/service/zd"
+	gozd "github.com/overtalk/bgo/pkg/service/zd"
 )
 
 // HandlerFunc a Handler wrapper
@@ -44,9 +44,7 @@ type Service struct {
 }
 
 // NewService create a tcp service
-func NewService(
-	name, addr string, handler HandlerFunc,
-) *Service {
+func NewService(name, addr string, handler HandlerFunc) *Service {
 	return &Service{
 		opt: ListenerOption{
 			Name:       name,
@@ -83,9 +81,7 @@ func (ts *Service) GetListenerOption() gozd.ListenerOption {
 }
 
 // GetName get the service name
-func (ts *Service) GetName() string {
-	return ts.opt.Name
-}
+func (ts *Service) GetName() string { return ts.opt.Name }
 
 // NewListener create a service listener
 func (ts *Service) NewListener() (net.Listener, error) {
@@ -95,8 +91,9 @@ func (ts *Service) NewListener() (net.Listener, error) {
 	l, err := net.Listen(ts.opt.Network, ts.opt.Address)
 	if err != nil {
 		// handle error
-		zap.S().Errorf("bind() failed on: %s %s, error: %v",
-			ts.opt.Network, ts.opt.Address, err)
+		// TODO: log
+		//zap.S().Errorf("bind() failed on: %s %s, error: %v",
+		//	ts.opt.Network, ts.opt.Address, err)
 		return nil, err
 	}
 	if ts.opt.Network == "unix" {
@@ -111,8 +108,9 @@ func (ts *Service) NewListener() (net.Listener, error) {
 
 // Serve service logic
 func (ts *Service) Serve(l net.Listener) {
-	zap.S().Infof("tcp-service %s: bind to %s@%s",
-		ts.opt.Name, ts.opt.Network, ts.opt.Address)
+	// TODO: add a log
+	//zap.S().Infof("tcp-service %s: bind to %s@%s",
+	//	ts.opt.Name, ts.opt.Network, ts.opt.Address)
 
 	var tempDelay time.Duration
 	for {

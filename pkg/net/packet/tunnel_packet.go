@@ -6,7 +6,6 @@ import "encoding/binary"
 // datasize(2 bytes) + client address(6 bytes, ip:port) + dataflag(1 bytes) + dataload(N bytes)
 type TunnelPacket []byte
 
-// NewTunnelPacket create a TunnelPacket
 func NewTunnelPacket(size uint16) TunnelPacket {
 	packet := TunnelPacket(make([]byte, 2+size))
 	packet.SetDataSize(size)

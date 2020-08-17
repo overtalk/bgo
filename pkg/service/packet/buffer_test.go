@@ -3,7 +3,7 @@ package packet_test
 import (
 	"testing"
 
-	"github.com/overtalk/bgo/pkg/packet"
+	"github.com/overtalk/bgo/pkg/service/packet"
 )
 
 func TestBuffer(t *testing.T) {

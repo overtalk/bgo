@@ -1,8 +1,6 @@
 package packet
 
-import (
-	"encoding/binary"
-)
+import "encoding/binary"
 
 // BasicPacket 3+N bytes
 // datasize(2 bytes) + dataflag(1 byte) + dataload(N bytes)
@@ -17,8 +15,8 @@ func NewBasicPacket(size uint16) BasicPacket {
 
 // MakeBasicPacket make a BasicPacket with data
 func MakeBasicPacket(flag uint8, data []byte) BasicPacket {
-	datasize := 1 + uint16(len(data))
-	packet := NewBasicPacket(datasize)
+	dataSize := 1 + uint16(len(data))
+	packet := NewBasicPacket(dataSize)
 	packet.SetDataFlag(flag)
 	packet.SetDataLoad(data)
 	return packet

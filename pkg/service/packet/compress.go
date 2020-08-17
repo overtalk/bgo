@@ -1,6 +1,6 @@
 package packet
 
-import "github.com/overtalk/bgo/pkg/pool"
+import "github.com/overtalk/bgo/pkg/service/pool"
 
 // provide some methods to compress a packet of data
 var zlibPool *pool.ZlibWriterPool
